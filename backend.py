@@ -31,8 +31,7 @@ def hello():
 def signup():
     email = request.args.get("email")
     password = request.args.get("password")
-    # email = 'rahulbulls12@gmail.com'
-    # password = 'rahul2000'
+
     try:
         user = auth.create_user_with_email_and_password(email, password)
         auth.send_email_verification(user['idToken'])
